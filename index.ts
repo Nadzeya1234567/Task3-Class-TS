@@ -16,7 +16,9 @@ class HumanData {
   ) {
     this._fullname = Name;
     this._height = Height;
+
     this._weight = Weight;
+
     this._colourEyes = ColorEyes;
     this._age = Age;
     this._adult = Adult;
@@ -33,7 +35,7 @@ class HumanData {
     return this._height;
   }
   set height(value: number) {
-    if (value < 0) {
+    if (value <= 0) {
       console.log("Such height of human doesn't exist. Try again");
     } else {
       this._height = value;
@@ -44,7 +46,7 @@ class HumanData {
     return this._weight;
   }
   set weight(value: number) {
-    if (value < 0) {
+    if (value <= 0) {
       console.log("Such weight of human doesn't exist. Try again");
     } else {
       this._weight = value;
@@ -81,3 +83,4 @@ console.log(human.weight);
 console.log(human.colourEyes);
 console.log(human.age);
 console.log(human.adult);
+console.log(human);

@@ -1,7 +1,6 @@
 "use strict";
 class HumanData {
     constructor(Name, Height, Weight, ColorEyes, Age, Adult) {
-        this._adult = true;
         this._fullname = Name;
         this._height = Height;
         this._weight = Weight;
@@ -19,7 +18,7 @@ class HumanData {
         return this._height;
     }
     set height(value) {
-        if (value < 0) {
+        if (value <= 0) {
             console.log("Such height of human doesn't exist. Try again");
         }
         else {
@@ -30,7 +29,7 @@ class HumanData {
         return this._weight;
     }
     set weight(value) {
-        if (value < 0) {
+        if (value <= 0) {
             console.log("Such weight of human doesn't exist. Try again");
         }
         else {
@@ -49,10 +48,18 @@ class HumanData {
     set age(value) {
         this._age = value;
     }
+    get adult() {
+        return this._adult;
+    }
+    set adult(value) {
+        this._adult = value;
+    }
 }
-const human = new HumanData("Ivan Ivanovich Ivanov", 182, 82, "blue", 21);
+let human = new HumanData("Ivan", 182, 82, "blue", 21, true);
 console.log(human.fullname);
 console.log(human.height);
 console.log(human.weight);
 console.log(human.colourEyes);
 console.log(human.age);
+console.log(human.adult);
+console.log(human);
